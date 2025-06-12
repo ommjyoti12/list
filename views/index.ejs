@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  >
+    <div>
+        <form  method="get" action="/add">
+            <button>ADD NEW</button>
+        </form>
+    </div>
+  
+   <% for( al of message  ) { %>
+    <div style="border: 1px solid #000;">
+        <h2>id:<%= al.id %></h2>
+    <h2>from:<%= al.from %></h2>
+    <h2>to:<%= al.to %></h2>
+    <h2>date:<%= al.time.toString().split(" ")[1]%></h2>
+    <form method="get" action="/update/<%=al.id %>">
+     
+        <button>click</button>
+    </form>
+    <form method="post" action="/dele/<%=al.id %>?_method=DELETE">
+     
+        <button>DELETE</button>
+    </form>
+    </div>
+   
+   <% } %>
+
+   
+</body>
+</html>
